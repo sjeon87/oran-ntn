@@ -4,14 +4,14 @@
 //
 // OranNtnOnnxXapp — AI-native inference xApp (Deng 2026 Sec. V; adoption plan
 // WS3). Closes the train -> deploy -> infer lifecycle:
-//   1. offline training on toolkit gym environments (ns3-ai-ntn),
+//   1. offline training on toolkit gym environments (ns3-ai),
 //   2. export to .onnx,
 //   3. THIS xApp loads the model with ONNX Runtime (MIT-licensed; web-checked
 //      2026-06-10) and infers on the LIVE measured feature vectors from
 //      NtnOranAiFlowMonitor::GetFeatures().
 //
 // ONNX Runtime is an OPTIONAL dependency, auto-detected at configure time
-// (mirrors ns3-ai-ntn's libtensorflow pattern). Without it the xApp falls
+// (mirrors ns3-ai's libtensorflow pattern). Without it the xApp falls
 // back to a caller-registered heuristic policy, so every example still runs
 // — the inference path upgrades transparently when onnxruntime-dev is
 // installed. IsOnnxAvailable()/IsModelLoaded() report which path is live.

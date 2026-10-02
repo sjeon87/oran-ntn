@@ -93,10 +93,10 @@ and `ntn-observability`. All four are bundled in the toolkit under
 `contrib/`; on a vanilla tree, copy them from the toolkit. The `oran-ntn`
 library itself builds without them — the examples do not.
 
-### 2e. `ns3-ai-ntn` (OPTIONAL — learning-based xApps / gym envs)
+### 2e. `ns3-ai` (OPTIONAL — learning-based xApps / gym envs)
 
 The gym handover / beam-hop / slice / steering environments and
-`OranNtnFederatedLearning` bridge to Python via the toolkit's `ns3-ai-ntn`
+`OranNtnFederatedLearning` bridge to Python via the toolkit's `ns3-ai`
 fork. The E2/KPM/RC control loop and all heuristic xApps build and run
 **without** it. When present in `contrib/`, the build links it automatically.
 
@@ -185,7 +185,7 @@ Args: `role` (ric|agent), `proto` (sctp|tcp), `host`, `port`, `duration`,
 `oran-ntn-gym-handover-example` runs the `OranNtnGymHandover` RL env on the
 measured radio with its action leg closed (args: `duration`, `numUes`,
 `numSats`, `gym`, `outputDir`). Default `--gym=0` steps in-process with no
-Python peer; `--gym=1` opens the `ns3-ai-ntn` peer (blocks for a connection).
+Python peer; `--gym=1` opens the `ns3-ai` peer (blocks for a connection).
 
 ```bash
 ./ns3 run "oran-ntn-gym-handover-example --duration=30 --numSats=3 --numUes=2"

@@ -9,7 +9,7 @@ build_lib_example(
     ${libntn-traffic}
     ${libntn-cho}
     ${libntn-constellation}
-    ${libns3-ai-ntn}
+    ${libns3-ai}
 )
 
 build_lib_example(

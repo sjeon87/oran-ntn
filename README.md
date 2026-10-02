@@ -232,7 +232,7 @@ All in `model/oran-ntn-cross-domain.h`:
 ### AI-native inference
 - `OranNtnOnnxXapp` (`model/oran-ntn-onnx-xapp.h`) — wiring for a
   train → export → infer lifecycle: train offline on the toolkit gym
-  environments (`ns3-ai-ntn`; note those envs are synthetic), export to
+  environments (`ns3-ai`; note those envs are synthetic), export to
   `.onnx`, load with ONNX Runtime, and infer on live measured feature
   vectors. **No trained `.onnx` ships**, so the default run path is the
   registered heuristic policy, not a learned model. ONNX Runtime itself is
@@ -716,7 +716,7 @@ Run the test suites:
 
 - **Required (in-tree):** `ntn-traffic` (real mmwave NR NTN stack via
   `NtnRealStackHelper`, `NtnOranApplication`/`NtnOranSink`,
-  `NtnOranAiFlowMonitor`), `mmwave`, `satellite`, `ns3-ai-ntn`. Several
+  `NtnOranAiFlowMonitor`), `mmwave`, `satellite`, `ns3-ai`. Several
   examples additionally use `ntn-constellation` (SGP4 / Walker) and
   `ntn-cho`; `ntn-e2e-full-stack` also uses `ntn-slice`.
 - **Optional, auto-detected at configure time:**

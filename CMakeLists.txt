@@ -192,7 +192,7 @@ if(SCTP_LIB)
     list(APPEND oran_ntn_extra_libs ${SCTP_LIB})
 endif()
 # WS3 — optional ONNX Runtime for OranNtnOnnxXapp (MIT; graceful fallback to
-# the registered heuristic when absent). Mirrors ns3-ai-ntn's libtensorflow
+# the registered heuristic when absent). Mirrors ns3-ai's libtensorflow
 # auto-detect pattern.
 find_path(ONNXRUNTIME_INCLUDE_DIR onnxruntime_cxx_api.h
           PATH_SUFFIXES onnxruntime onnxruntime/core/session)
@@ -220,7 +220,7 @@ build_lib(
         ${libapplications}
         ${libsatellite}
         ${libmmwave}
-        ${libns3-ai-ntn}
+        ${libns3-ai}
         ${libntn-traffic}
         ${libntn-slice}
         ${oran_ntn_extra_libs}
