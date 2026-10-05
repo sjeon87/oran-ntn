@@ -3950,7 +3950,7 @@ class OranNtnDataRepoSqliteTestCase : public TestCase
   private:
     void DoRun() override
     {
-        const std::string path = "/tmp/oran-ntn-test-repo.db";
+        const std::string path = CreateTempDirFilename("oran-ntn-test-repo.db");
         std::remove(path.c_str());
 
         Ptr<OranNtnDataRepository> repo =
