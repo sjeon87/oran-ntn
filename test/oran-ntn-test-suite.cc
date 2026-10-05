@@ -7364,6 +7364,12 @@ class PrecoderReachesThePhasedArrayTest : public TestCase
         const size_t nElem = array->GetNumElems();
         NS_TEST_ASSERT_MSG_EQ(nElem, 4u, "a 2x2 array has four elements");
 
+        PhasedArrayModel::ComplexVector initialWeights(nElem);
+        for (size_t i = 0; i < nElem; ++i)
+        {
+            initialWeights[i] = std::complex<double>(0.5, 0.0);
+        }
+        array->SetBeamformingVector(initialWeights);
         const auto before = array->GetBeamformingVector();
 
         Ptr<OranNtnSplitGnbEntity> ru = CreateObject<OranNtnSplitGnbEntity>();
