@@ -36,7 +36,7 @@
 #include <algorithm>
 #include <cmath>
 #include <fstream>
-#include <sys/stat.h>
+#include <filesystem>
 #include <vector>
 
 namespace ns3
@@ -752,14 +752,16 @@ void
 OranNtnHelper::SetOutputDirectory(const std::string& dir)
 {
     m_outputDir = dir;
-    mkdir(dir.c_str(), 0755);
+    std::error_code error;
+    std::filesystem::create_directory(dir, error);
 }
 
 void
 OranNtnHelper::WriteAllMetrics(Ptr<OranNtnNearRtRic> ric) const
 {
     NS_LOG_FUNCTION(this);
-    mkdir(m_outputDir.c_str(), 0755);
+    std::error_code error;
+    std::filesystem::create_directory(m_outputDir, error);
 
     // Write RIC metrics
     ric->WriteMetrics(m_outputDir + "/ric_metrics.txt");

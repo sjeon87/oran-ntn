@@ -11,10 +11,8 @@
 //   - TCP: always available, uses standard SOCK_STREAM. Used in tests
 //     and in environments where SCTP kernel modules are unavailable
 //     (most CI containers).
-//   - SCTP: SOCK_STREAM SCTP via libsctp on Linux. Wire-compatible with
-//     real FlexRIC `nearRT-RIC` binary. Compiled in unconditionally
-//     since libsctp-dev is widely available; a runtime probe at Open()
-//     time confirms kernel support.
+//   - SCTP: SOCK_STREAM SCTP on Linux. Opening a connection probes kernel
+//     support; other platforms can use the TCP backend.
 //
 // Both backends frame messages as
 //     uint16 type | uint32 len | payload
